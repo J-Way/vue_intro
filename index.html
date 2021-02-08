@@ -27,9 +27,35 @@
     </div>
 
     <br>
-    <div id="hover_if">
+    <div id="vue_if">
+        <button v-on:click="seen = true"> Show the text! </button>
+        <button v-on:click="seen = false"> Hide the text! </button>
         <span v-if="seen"> Now you see me</span>
     </div>
+
+    <br>
+    <div id="vue_for">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+    <br>
+    <div id="vue_binding">
+        <p> {{message}} </p>
+        <input v-model="message">
+    </div>
+
+
+    <br>
+    <div id="app-7">
+        <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+    </div>
+
 </body>
 
 <!-- look into onDomLoaded (or whatever it's called) -->
